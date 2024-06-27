@@ -1,0 +1,325 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    /*html,
+input {
+    font: 400 1rem/160% "Mulish", sans-serif;
+    /*este código define que todo o texto no documento deve ter um peso de fonte normal, um tamanho de fonte de 1rem (que depende do tamanho da fonte do elemento raiz), uma altura de linha de 160% do tamanho da fonte, usando a fonte "Mulish" ou uma fonte sans-serif se "Mulish" não estiver disponível.
+}*/
+    
+    :root {
+        font-size: 62.5%;
+    }
+    /*Outra forma de definir o tamanho da fonte no documento */
+    
+    body {
+        font-size: 1.6rem;
+        font-weight: 400;
+        font-family: "Mulish", sans-serif;
+        font-style: normal;
+        line-height: 160%;
+    }
+    
+    .container {
+        max-width: 30rem;
+        padding-inline: 1.25rem;
+        margin-inline: auto;
+    }
+    
+    img {
+        width: 100%;
+        height: auto;
+    }
+    
+    h1,
+    h2,
+    h3 {
+        font-size: 2.4rem;
+        color: var(--Platform-Aliases-Shape-principal);
+    }
+    
+    h3 {
+        font-size: 1.8rem;
+        line-height: 100%;
+    }
+    
+    .text-sn {
+        font-size: 1.6rem;
+    }
+    /* HEADER */
+    
+    header {
+        background-color: var(--Brand-Colors-Explorer-dark);
+        padding: 1.2rem 2.8rem;
+    }
+    
+    a {
+        line-height: 0;
+    }
+    
+    header .container {
+        max-width: 15.06rem;
+        margin-inline: auto;
+        display: flex;
+        align-items: center;
+        gap: 1.126rem;
+        justify-content: center;
+    }
+    
+    header .input-Search input {
+        padding: 1.2rem 1.6rem 1.2rem 1.4rem;
+        background: rgba(255, 255, 255, 0.20);
+        border: 0;
+        border-radius: .4rem;
+    }
+    
+    input::placeholder {
+        color: #fff;
+        font-size: 1.6rem;
+    }
+    
+    .cat-paw {
+        width: 2.5rem;
+        height: 2.5rem;
+        padding: .8rem;
+        background-color: #fff;
+        border-radius: 50%;
+    }
+    
+    .avatar {
+        width: 4.5rem;
+        height: 4.5rem;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+    /* HEADER */
+    /* MAIN */
+    
+    main .container {
+        overflow: visible;
+        /* Permitir transbordamento */
+        position: relative;
+        /* Para controle de posicionamento */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    main .cat1 {
+        width: calc(120% + 1.25rem);
+        /* 100% mais o padding-inline */
+        margin-inline: -1.25rem;
+        /* Negar o padding-inline */
+        height: auto;
+        align-self: center;
+        /* Centralizar horizontalmente apenas para .cat1 */
+    }
+    
+    main h1 {
+        margin-top: 2rem;
+    }
+    
+    main .button img {
+        padding: .7rem;
+        background: var(--Brand-Colors-Explorer-dark);
+        border-radius: 50%;
+    }
+    
+    button {
+        all: unset;
+        transform: all 300ms;
+    }
+    
+    button:hover {
+        transform: scale(1.1) rotate(10deg);
+    }
+    
+    main .button {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 1.2rem;
+        margin-block: 2rem;
+    }
+    /*---------------------------------------------------------*/
+    /*   ASIDE  */
+    
+    aside .container {
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        overflow: hidden;
+        /* esconde as partes da imagem fora do container */
+    }
+    
+    section article img {
+        width: 100%;
+        /*  Largura fixa da imagem */
+        height: 8.4rem;
+        /*  Altura fixa da imagem */
+        object-fit: cover;
+        /* Escala a imagem para cobrir o espaço definido */
+        border-radius: 0.5rem;
+        /* Borda arredondada */
+    }
+    
+    section article {
+        display: grid;
+        grid-template-columns: 4fr 6fr;
+        /* Coluna automática para a imagem e coluna de tamanho flexível para o texto */
+        grid-gap: 1.6rem;
+        /* Espaçamento entre a imagem e o texto */
+        align-items: center;
+        /* Alinha os itens verticalmente */
+        /* outline: 1px solid green; */
+    }
+    
+    section article .text p {
+        font-size: 1.4rem;
+    }
+    /*----------------------------------*/
+    /* FOOTER */
+    
+    footer {
+        background-color: var(--Brand-Colors-Explorer-dark);
+        text-align: center;
+        color: #fff;
+        padding: 1.6rem;
+        margin-top: 2rem;
+    }
+    /*Estilos para Desktops*/
+    
+    @media (min-width: 1200px) {
+        .page {
+            display: grid;
+            grid-template-areas: " header header" " main aside" "footer footer";
+            margin-inline: auto;
+            gap: 2rem;
+        }
+        .container {
+            padding: initial;
+            max-width: initial;
+            margin: initial;
+            /*outline: 1px solid red;*/
+        }
+        /*-------------------------*/
+        header .container {
+            margin-inline: auto;
+        }
+        header {
+            grid-area: header;
+        }
+        header .input-Search input {
+            width: 100%;
+        }
+        header .input-Search {
+            flex: 1;
+        }
+        header .container {
+            max-width: 76rem;
+        }
+        /*-------------------------*/
+        main {
+            grid-area: main;
+        }
+        main .container {
+            max-width: 50rem;
+            margin-left: auto;
+        }
+        main .cat1 {
+            width: 100%;
+            /* 100% mais o padding-inline */
+            margin-inline: 0;
+            /* Negar o padding-inline */
+            height: auto;
+            align-self: center;
+            /* Centralizar horizontalmente apenas para .cat1 */
+            border-radius: 0.2rem;
+        }
+        /*-------------------------*/
+        aside {
+            grid-area: aside;
+            margin-top: 0;
+        }
+        aside .container {
+            max-width: 24rem;
+            height: 50rem;
+            padding: initial;
+            margin-top: 0;
+        }
+        /*-------------------------*/
+        footer {
+            grid-area: footer;
+        }
+        /*--------------*/
+        aside .scroll-container {
+            max-height: 60rem;
+            /* Defina a altura desejada para o contêiner */
+            overflow-y: scroll;
+            border: 1px solid #ccc;
+            /* Adicione uma borda para visualização */
+            border: none;
+        }
+        /* Estilizar a barra de rolagem para ocultar */
+        aside.scroll-container::-webkit-scrollbar {
+            display: none;
+            /* Chrome, Safari, Opera */
+        }
+        aside.scroll-container {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+        .article {
+            margin-bottom: 2rem;
+            /* Espaçamento entre artigos */
+        }
+        .article img {
+            max-width: 100%;
+            height: auto;
+        }
+        .text {
+            margin-top: 2rem;
+        }
+        .text h3 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+    }
+    /*----------------------------------*/
+    
+    @media (max-width: 1114px) {
+        .container {
+            padding: initial;
+            max-width: initial;
+            margin: initial;
+        }
+        /*-------------------------*/
+        header .container {
+            margin-inline: auto;
+        }
+        header {
+            grid-area: header;
+        }
+        header .input-Search input {
+            width: 100%;
+        }
+        header .input-Search {
+            flex: 1;
+        }
+        header .container {
+            max-width: 76rem;
+        }
+        main .container {
+            padding-inline: 3rem;
+            /* Adiciona padding à direita e à esquerda */
+        }
+        aside .container {
+            padding-inline: 3rem;
+            /* Adiciona padding à direita e à esquerda */
+        }
+    }
